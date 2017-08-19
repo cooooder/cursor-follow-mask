@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>cursor-follow-mask插件</title>
+		<style type="text/css">
+			html,body{
+				padding: 0 20px;
+				margin: 0;
+				height: 100%;
+			}
+			#container{
+				background: #eee;
+			}
+			#container:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			.section{
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				float:left;
+				margin: 20px 10px;
+			}
+			
+			.mark{
+				background: rgba(0,0,0,.3);
+				position: absolute;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="container">
+			
+		</div>
+		<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<script src="./cursor-follow-mask.1.0.3.js"></script>
+		
+		<script type="text/javascript">
+var img = [
+	{src:'http://img0.imgtn.bdimg.com/it/u=3380970902,2431800410&fm=26&gp=0.jpg',title:'图片标题'},
+	{src:'http://img4.imgtn.bdimg.com/it/u=787324823,4149955059&fm=26&gp=0.jpg',title:'图片标题'},
+	{src:'http://img5.imgtn.bdimg.com/it/u=3576283734,1694787135&fm=200&gp=0.jpg',title:'图片标题'},
+	{src:'http://img2.imgtn.bdimg.com/it/u=2296036879,3946723853&fm=26&gp=0.jpg',title:'图片标题'},
+	{src:'http://img4.imgtn.bdimg.com/it/u=4089857624,2636101296&fm=200&gp=0.jpg',title:'图片标题'},
+	{src:'http://img4.imgtn.bdimg.com/it/u=1408347702,1391492710&fm=26&gp=0.jpg',title:'图片标题'}
+
+]
+var titles = [];
+//var frag = document.createDocumentFragment();
+for (var i = 0; i < 30; i++) {
+	var randIndexItem = img[Math.floor(Math.random()*img.length)];
+	var randImg = randIndexItem.src;
+	titles.push(randIndexItem.title+i);
+	var myimage = $('<img />').attr({'src':randImg,'alt':titles[i]});
+	$('#container').append($('<div class="section"></div>').append(myimage));
+
+}
+$(function () {
+	$('#container .section').cursorFM({
+		caption:titles
+	});
+})
+
+		</script>
+	</body>
+</html>
+
+
+
+
+

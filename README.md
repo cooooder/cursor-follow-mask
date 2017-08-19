@@ -1,6 +1,9 @@
 # cursor-follow-mask
 a jQuery plugin for creating mask tooltips that hover over the images and follow mouse movement。
 
+## demo
+try a demo , look here <a href="https://cooooder.github.io/cursor-follow-mask/" target="_blank">https://cooooder.github.io/cursor-follow-mask/</a>
+
  ## Installation
  
 Include  jQuery and cursor-follow-mask.js in the <head> of your HTML document:

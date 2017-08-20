@@ -1,4 +1,5 @@
 ;(function ($,window,document) {
+	'use strict';
 	var defaults = {
 		target:'img',
 		caption:'title',
@@ -22,7 +23,7 @@
 	
 	CursorFollowMask.prototype = {
 		init:function () {
-			var mx = my = null;
+			var mx = null,my = null;
 			var flag = false;
 			$(document).on('mousemove',function (e) {
 				if (flag === true) {
@@ -119,7 +120,6 @@
 			   	
 					$('#mask').remove();
 					flag = false;
-					console.log('触发mouseleave')
 				});
 		},
 		direction:function () {
